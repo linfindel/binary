@@ -1,6 +1,7 @@
 const container = document.getElementById("container");
 let score = 0;
 let answer;
+let operator = "+";
 
 document.getElementById("highscore").innerText = `Highscore: ${localStorage.getItem("highscore") || 0}`;
 
@@ -12,7 +13,7 @@ function start() {
       <div class="card column">
         <h1 id="question"></h1>
 
-        <input id="input" type="text" placeholder="Answer here" oninput="mark()" autofocus>
+        <input id="input" type="text" placeholder="Answer here" oninput="mark()" autofocus autocomplete="off">
       </div>
     `;
 
@@ -34,9 +35,29 @@ function ask() {
   const num1 = Math.floor(Math.random() * 10);
   const num2 = Math.floor(Math.random() * 10);
 
-  answer = num1 + num2;
+  if (operator == "+") {
+    answer = num1 + num2;
 
-  document.getElementById("question").innerText = `${num1} + ${num2}`;
+    document.getElementById("question").innerText = `${num1} + ${num2}`;
+  }
+
+  else if (operator == "-") {
+    answer = num1 - num2;
+
+    document.getElementById("question").innerText = `${num1} - ${num2}`;
+  }
+
+  else if (operator == "*") {
+    answer = num1 * num2;
+
+    document.getElementById("question").innerText = `${num1} * ${num2}`;
+  }
+
+  else if (operator == "/") {
+    answer = num1 - num2;
+
+    document.getElementById("question").innerText = `${num1} / ${num2}`;
+  }
 }
 
 function mark() {
@@ -60,4 +81,26 @@ function end() {
 function reset() {
   localStorage.clear();
   location.reload();
+}
+
+function setOperator(newOperator) {
+  operator = newOperator;
+
+  document.getElementById(operator).style.backgroundColor = "rgba(0, 89, 255, 0.5)";
+
+  if (operator != "+") {
+    document.getElementById("+").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+  }
+
+  if (operator != "-") {
+    document.getElementById("-").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+  }
+
+  if (operator != "*") {
+    document.getElementById("*").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+  }
+
+  if (operator != "/") {
+    document.getElementById("/").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+  }
 }

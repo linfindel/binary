@@ -10,10 +10,17 @@
 </head>
 <body>
   <div id="container" class="column-flat absolute-centre">
-    <div class="card-flat-bottom column">
+    <div class="card-flat-bottom column" style="width: calc(100% - 5rem);">
       <h1 class="material-symbols-rounded" style="font-size: 5rem;">calculate</h1>
-      <h1>Addition Quiz</h1>
-      <p>Test your addition skills with this fun quiz</p>
+      <h1>Maths Quiz</h1>
+      <p>Test your maths skills with this fun quiz</p>
+    </div>
+
+    <div class="row" style="gap: 0.5rem; width: 100%;">
+      <button id="+" onclick="setOperator('+')" class="card-flat" style="flex: 1; background-color: rgba(0, 89, 255, 0.5);">Addition</button>
+      <button id="-" onclick="setOperator('-')" class="card-flat" style="flex: 1;">Subtraction</button>
+      <button id="*" onclick="setOperator('*')" class="card-flat" style="flex: 1;">Multiplication</button>
+      <button id="/" onclick="setOperator('/')" class="card-flat" style="flex: 1;">Division</button>
     </div>
 
     <div class="card-flat-top column" style="width: calc(100% - 5rem);">

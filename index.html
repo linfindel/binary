@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addition Quiz</title>
+
+  <link rel="stylesheet" href="https://linfindel.github.io/nadircss/nadir.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+  <div id="container" class="column-flat absolute-centre">
+    <div class="card-flat-bottom column">
+      <h1 class="material-symbols-rounded" style="font-size: 5rem;">calculate</h1>
+      <h1>Addition Quiz</h1>
+      <p>Test your addition skills with this fun quiz</p>
+    </div>
+
+    <div class="card-flat-top column" style="width: calc(100% - 5rem);">
+      <p id="highscore">Loading...</p>
+
+      <div class="row">
+        <button onclick="start()">
+          <span class="material-symbols-rounded">play_circle</span>
+          Begin
+        </button>
+
+        <button onclick="reset(0)">
+          <span class="material-symbols-rounded">delete</span>
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress bottom" style="width: calc(100% - 2rem); height: 1rem; background-color: rgba(0, 89, 255, 0.25);">
+    <div id="progress" class="progress" style="height: 100%; width: 100%; background-color: rgb(0, 89, 255);"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

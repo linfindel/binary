@@ -20,6 +20,7 @@ const achievementsList = {
 const gradients = {
   "Baby steps": "linear-gradient(45deg, rgba(241, 168, 241, 0.5), rgba(0, 213, 255, 0.5))",
   "Doing well": "linear-gradient(45deg, rgba(0, 89, 255, 0.25), rgba(0, 255, 0, 0.25))",
+  "Arithmetic god": "linear-gradient(45deg, rgba(197, 21, 0, 0.25), rgba(255, 0, 255, 0.25))",
   "You should be doing quantum mechanics by now": "linear-gradient(45deg, rgba(255, 0, 255, 0.25), rgba(0, 0, 255, 0.25))",
   "Nice": "url(https://media.zenfs.com/en/nerdist_761/2d47d0794ed390d7807134077817ca40)",
   "Cheater": "url(https://media.zenfs.com/en/nerdist_761/2d47d0794ed390d7807134077817ca40)" 

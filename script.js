@@ -36,14 +36,20 @@ if (localStorage.getItem("highscore") == "10" && !localStorage.getItem("arithmet
 
 else if (localStorage.getItem("highscore") == "20") {
   triggerAchievement("You should be doing quantum mechanics by now");
+
+  localStorage.setItem("quantum-mechanics", true);
 }
 
 else if (localStorage.getItem("highscore") == "69") {
   triggerAchievement("Nice");
+
+  localStorage.setItem("nice", true);
 }
 
 else if (localStorage.getItem("highscore") == "69420") {
   triggerAchievement("Cheater");
+
+  localStorage.setItem("cheater", true);
 }
 
 function start() {
@@ -119,6 +125,7 @@ function mark() {
 
     if (localStorage.getItem("questions-answered") == 10) {
       triggerAchievement("Doing well");
+      localStorage.setItem("doing-well", true);
     }
   }
 }

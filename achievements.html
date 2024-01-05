@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addition Quiz</title>
+
+  <link rel="stylesheet" href="https://linfindel.github.io/nadircss/nadir.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <style>
+    .snackbar {
+      animation: 1s achievement linear;
+    }
+    
+    @keyframes achievement {
+      from {
+        filter: hue-rotate(0deg);
+      }
+
+      to {
+        filter: hue-rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <button onclick="location.href = '.'" class="top" style="left: 0; margin-left: 1rem;">
+    <span class="material-symbols-rounded">arrow_back</span>
+    Back
+  </button>
+
+  <div class="card column" style="margin-top: 5rem;">
+    <h1>Achievements</h1>
+
+    <div class="column hole">
+        <div id="baby-steps" class="snackbar" style="">
+          <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
+
+          <div class="column" style="align-items: flex-start; gap: 0;">
+            <h1 style="margin: 0.5rem;">Baby steps</h1>
+            <p style="margin: 0.5rem;">Answer your first question</p>
+          </div>
+        </div>
+
+        <div id="doing-well" class="snackbar" style="">
+          <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
+
+          <div class="column" style="align-items: flex-start; gap: 0;">
+            <h1 style="margin: 0.5rem;">Doing well</h1>
+            <p style="margin: 0.5rem;">Answer ten questions</p>
+          </div>
+        </div>
+
+        <div id="arithmetic-god" class="snackbar" style="">
+          <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
+
+          <div class="column" style="align-items: flex-start; gap: 0;">
+            <h1 style="margin: 0.5rem;">Arithmetic god</h1>
+            <p style="margin: 0.5rem;">Achieve a highscore of 10</p>
+          </div>
+        </div>
+
+        <div id="quantum-mechanics" class="snackbar" style="">
+          <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
+
+          <div class="column" style="align-items: flex-start; gap: 0;">
+            <h1 style="margin: 0.5rem;">You should be doing quantum mechanics by now</h1>
+            <p style="margin: 0.5rem;">Achieve a highscore of 20</p>
+          </div>
+        </div>
+
+        <div id="nice" class="snackbar" style="">
+          <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
+
+          <div class="column" style="align-items: flex-start; gap: 0;">
+            <h1 style="margin: 0.5rem;">Nice</h1>
+            <p style="margin: 0.5rem;">Achieve a highscore of 69</p>
+          </div>
+        </div>
+
+        <div id="cheater" class="snackbar" style="">
+          <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
+
+          <div class="column" style="align-items: flex-start; gap: 0;">
+            <h1 style="margin: 0.5rem;">Cheater</h1>
+            <p style="margin: 0.5rem;">Achieve a highscore of 69420</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>

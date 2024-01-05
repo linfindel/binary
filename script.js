@@ -18,6 +18,7 @@ function start() {
     `;
 
     container.style.opacity = "1";
+    document.getElementById("progress-container").style.opacity = "1";
 
     document.getElementById("progress").style.animation = "10s linear progress-determinate reverse both";
 

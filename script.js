@@ -1,9 +1,49 @@
+if (!localStorage.getItem("questions-answered")) {
+  localStorage.setItem("questions-answered", 0);
+}
+
 const container = document.getElementById("container");
 let score = 0;
 let answer;
 let operator = "+";
+let achievements = localStorage.getItem("achievements") || [];
+
+const achievementsList = {
+  "Baby steps": "Answer your first question",
+  "Doing well": "Answer ten questions",
+  "Arithmetic god": "Achieve a highscore of 10",
+  "You should be doing quantum mechanics by now": "Achieve a highscore of 20",
+  "Nice": "Achieve a highscore of 69",
+  "Cheater":"Achieve a highscore of 69420"
+}
+
+const gradients = {
+  "Baby steps": "linear-gradient(45deg, rgba(241, 168, 241, 0.5), rgba(0, 213, 255, 0.5))",
+  "Doing well": "linear-gradient(45deg, rgba(0, 89, 255, 0.25), rgba(0, 255, 0, 0.25))",
+  "You should be doing quantum mechanics by now": "linear-gradient(45deg, rgba(255, 0, 255, 0.25), rgba(0, 0, 255, 0.25))",
+  "Nice": "url(https://media.zenfs.com/en/nerdist_761/2d47d0794ed390d7807134077817ca40)",
+  "Cheater": "url(https://media.zenfs.com/en/nerdist_761/2d47d0794ed390d7807134077817ca40)" 
+}
 
 document.getElementById("highscore").innerText = `Highscore: ${localStorage.getItem("highscore") || 0}`;
+
+if (localStorage.getItem("highscore") == "10" && !localStorage.getItem("arithmetic-god-triggered")) {
+  triggerAchievement("Arithmetic god");
+
+  localStorage.setItem("arithmetic-god-triggered", true);
+}
+
+else if (localStorage.getItem("highscore") == "20") {
+  triggerAchievement("You should be doing quantum mechanics by now");
+}
+
+else if (localStorage.getItem("highscore") == "69") {
+  triggerAchievement("Nice");
+}
+
+else if (localStorage.getItem("highscore") == "69420") {
+  triggerAchievement("Cheater");
+}
 
 function start() {
   container.style.opacity = "0";
@@ -65,9 +105,20 @@ function mark() {
   const input = document.getElementById("input").value;
 
   if (input == answer) {
+    localStorage.setItem("questions-answered", Number(localStorage.getItem("questions-answered")) + 1);
+
+    if (!localStorage.getItem("answered-question")) {
+      triggerAchievement("Baby steps");
+      localStorage.setItem("answered-question", true);
+    }
+
     ask();
     
     score++;
+
+    if (localStorage.getItem("questions-answered") == 10) {
+      triggerAchievement("Doing well");
+    }
   }
 }
 
@@ -104,4 +155,38 @@ function setOperator(newOperator) {
   if (operator != "/") {
     document.getElementById("/").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
   }
+}
+
+function triggerAchievement(achievement) {
+  const achievementTitle = achievement;
+  const achievementDescription = achievementsList[achievement];
+
+  const gradient = gradients[achievement];
+
+  const achievementSnackbar = document.createElement("div");
+
+  achievementSnackbar.classList.add("snackbar");
+  achievementSnackbar.classList.add("row");
+  achievementSnackbar.classList.add("top");
+
+  achievementSnackbar.style.paddingTop = "0";
+  achievementSnackbar.style.paddingBottom = "0";
+  achievementSnackbar.style.left = "0";
+  achievementSnackbar.style.marginLeft = "1rem";
+  achievementSnackbar.style.backgroundImage = gradient;
+
+  achievementSnackbar.innerHTML = `
+    <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
+
+    <div class="column" style="align-items: flex-start; gap: 0;">
+      <h1 style="margin: 0.5rem;">${achievementTitle}</h1>
+      <p style="margin: 0.5rem;">${achievementDescription}</p>
+    </div>
+  `;
+
+  document.body.appendChild(achievementSnackbar);
+
+  setTimeout(() => {
+    achievementSnackbar.remove();
+  }, 5000);
 }

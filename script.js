@@ -22,8 +22,8 @@ const gradients = {
   "Doing well": "linear-gradient(45deg, rgba(0, 89, 255, 0.25), rgba(0, 255, 0, 0.25))",
   "Arithmetic god": "linear-gradient(45deg, rgba(197, 21, 0, 0.25), rgba(255, 0, 255, 0.25))",
   "You should be doing quantum mechanics by now": "linear-gradient(45deg, rgba(255, 0, 255, 0.25), rgba(0, 0, 255, 0.25))",
-  "Nice": "url(https://media.zenfs.com/en/nerdist_761/2d47d0794ed390d7807134077817ca40)",
-  "Cheater": "url(https://media.zenfs.com/en/nerdist_761/2d47d0794ed390d7807134077817ca40)" 
+  "Nice": "url(https://i.pinimg.com/originals/8a/39/03/8a390326148f845c0e26c23d56b7fde9.gif)",
+  "Cheater": "url(https://i.pinimg.com/originals/8a/39/03/8a390326148f845c0e26c23d56b7fde9.gif)" 
 }
 
 document.getElementById("highscore").innerText = `Highscore: ${localStorage.getItem("highscore") || 0}`;

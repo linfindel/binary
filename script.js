@@ -198,3 +198,12 @@ function triggerAchievement(achievement) {
     achievementSnackbar.remove();
   }, 5000);
 }
+
+function cheat() {
+  localStorage.setItem("answered-question", true);
+  localStorage.setItem("doing-well", true);
+  localStorage.setItem("arithmetic-god-triggered", true);
+  localStorage.setItem("quantum-mechanics", true);
+  localStorage.setItem("nice", true);
+  localStorage.setItem("doing-well", true);
+}

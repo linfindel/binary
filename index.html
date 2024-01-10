@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Addition Quiz</title>
+  <title>Maths Quiz</title>
 
   <link rel="stylesheet" href="https://linfindel.github.io/nadircss/nadir.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -34,24 +34,38 @@
         opacity: 0;
       }
     }
+
+    @keyframes slide-in {
+      0% {
+        filter: blur(5px);
+        opacity: 0;
+        transform: translateY(5rem);
+      }
+
+      100% {
+        filter: blur(0px);
+        opacity: 1;
+        transform: translateY(0rem);
+      }
+    }
   </style>
 </head>
 <body>
   <div id="container" class="column-flat absolute-centre">
-    <div class="card-flat-bottom column" style="width: calc(100% - 5rem);">
+    <div class="card-flat-bottom column" style="width: calc(100% - 5rem); animation: 2s ease slide-in 0.5s both;">
       <h1 class="material-symbols-rounded" style="font-size: 5rem;">calculate</h1>
       <h1>Maths Quiz</h1>
       <p>Test your maths skills with this fun quiz</p>
     </div>
 
     <div class="row" style="gap: 0.5rem; width: 100%;">
-      <button id="+" onclick="setOperator('+')" class="card-flat" style="flex: 1; background-color: rgba(0, 89, 255, 0.5);">Addition</button>
-      <button id="-" onclick="setOperator('-')" class="card-flat" style="flex: 1;">Subtraction</button>
-      <button id="*" onclick="setOperator('*')" class="card-flat" style="flex: 1;">Multiplication</button>
-      <button id="/" onclick="setOperator('/')" class="card-flat" style="flex: 1;">Division</button>
+      <button id="+" onclick="setOperator('+')" class="card-flat" style="flex: 1; animation: 2s ease slide-in 2s both; background-color: rgba(0, 89, 255, 0.5);">Addition</button>
+      <button id="-" onclick="setOperator('-')" class="card-flat" style="flex: 1; animation: 2s ease slide-in 2.25s both;">Subtraction</button>
+      <button id="*" onclick="setOperator('*')" class="card-flat" style="flex: 1; animation: 2s ease slide-in 2.5s both;">Multiplication</button>
+      <button id="/" onclick="setOperator('/')" class="card-flat" style="flex: 1; animation: 2s ease slide-in 2.75s both;">Division</button>
     </div>
 
-    <div class="card-flat-top column" style="width: calc(100% - 5rem);">
+    <div class="card-flat-top column" style="width: calc(100% - 5rem); animation: 1s ease slide-in 4s both;">
       <p id="highscore">Loading...</p>
 
       <div class="row">

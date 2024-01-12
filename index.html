@@ -88,6 +88,8 @@
     <div id="bottom-card" class="card-flat-top column" style="width: calc(100% - 5rem); animation: 1s ease slide-in 4.5s both;">
       <p id="highscore">Loading...</p>
 
+      <input oninput="updateName()" type="text" id="name" placeholder="Name">
+
       <div class="row">
         <button onclick="start()">
           <span class="material-symbols-rounded">play_circle</span>
@@ -97,6 +99,11 @@
         <button onclick="openAchievements()">
           <span class="material-symbols-rounded">trophy</span>
           Achievements
+        </button>
+
+        <button onclick="openLeaderboard()">
+          <span class="material-symbols-rounded">leaderboard</span>
+          Leaderboard
         </button>
 
         <button onclick="reset()">

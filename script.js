@@ -8,6 +8,7 @@ let answer;
 let operator = localStorage.getItem("operator") || "+";
 let difficulty = localStorage.getItem("difficulty") || "easy";
 let achievements = localStorage.getItem("achievements") || [];
+let leaderboard;
 
 const achievementsList = {
   "Baby steps": "Answer your first question",
@@ -366,6 +367,38 @@ function openAchievements() {
   }, 100);
 }
 
+function openLeaderboard() {
+  document.getElementById("bottom-card").style.animation = "1s slide-out ease-in both";
+
+  setTimeout(() => {
+    document.getElementById("/").style.animation = "1s slide-out ease-in both";
+    setTimeout(() => {
+      document.getElementById("*").style.animation = "1s slide-out ease-in both";
+      setTimeout(() => {
+        document.getElementById("-").style.animation = "1s slide-out ease-in both";
+        setTimeout(() => {
+          document.getElementById("+").style.animation = "1s slide-out ease-in both";
+          setTimeout(() => {
+            document.getElementById("hard").style.animation = "1s slide-out ease-in both";
+            setTimeout(() => {
+              document.getElementById("medium").style.animation = "1s slide-out ease-in both";
+              setTimeout(() => {
+                  document.getElementById("easy").style.animation = "1s slide-out ease-in both";
+                  setTimeout(() => {
+                    document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
+                    setTimeout(() => {
+                      location.href = "leaderboard.html";
+                    }, 1000);
+                  }, 100);
+                }, 100);
+              }, 100);
+            }, 100);
+          }, 100);
+      }, 100);
+    }, 100);
+  }, 100);
+}
+
 function cheat() {
   localStorage.setItem("answered-question", true);
   localStorage.setItem("doing-well", true);
@@ -422,4 +455,54 @@ if (operator != "*") {
 
 if (operator != "/") {
   document.getElementById("/").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+}
+
+const repoUrl = 'https://api.github.com/repos/linfindel/maths-leaderboard';
+const filePath = 'leaderboard.json';
+const accessToken = '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';
+
+fetch("https://raw.githubusercontent.com/linfindel/maths-leaderboard/main/leaderboard.json")
+.then(response => response.json())
+.then(data => {
+  leaderboard = data;
+  console.log(`Leaderboard: ${JSON.stringify(leaderboard)}`);
+  leaderboard[localStorage.getItem("name")] = localStorage.getItem("highscore") || 0;
+
+  // Convert the data to JSON string after updating it
+  const jsonContent = JSON.stringify(leaderboard, null, 2);
+
+  // Make the API request to get the existing file content
+  fetch(`${repoUrl}/contents/${filePath}`, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  })
+    .then(response => response.json())
+    .then(data => {
+      // Update the existing file with the new content
+      return fetch(`${repoUrl}/contents/${filePath}`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: 'Update leaderboard',
+          content: btoa(jsonContent),
+          sha: data.sha,
+        }),
+      });
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+})
+.catch(error => console.error('Error fetching leaderboard:', error));
+
+function updateName() {
+  localStorage.setItem("name", document.getElementById("name").value);
+}
+
+if (localStorage.getItem("name")) {
+  document.getElementById("name").remove();
 }

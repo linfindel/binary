@@ -15,7 +15,9 @@ const achievementsList = {
   "Arithmetic god": "Achieve a highscore of 10",
   "You should be doing quantum mechanics by now": "Achieve a highscore of 20",
   "Nice": "Achieve a highscore of 69",
-  "Cheater":"Achieve a highscore of 69420"
+  "Cheater":"Achieve a highscore of 69420",
+  "Medium is locked": "Achieve a highscore of 5 to unlock",
+  "Hard is locked": "Achieve a highscore of 10 to unlock"
 }
 
 const gradients = {
@@ -256,8 +258,40 @@ function setDifficulty(newDifficulty) {
   }
 }
 
+function lockDifficulty(difficulty) {
+  document.getElementById(difficulty).style.backgroundColor = "rgb(25, 25, 25)";
+  document.getElementById(difficulty).style.cursor = "url(https://linfindel.github.io/nadircss/cursors/normal-select.cur), auto";
+  document.getElementById(difficulty).onclick = "";
+
+  document.getElementById(difficulty).addEventListener("click", () => { showLockedTooltip(difficulty) });
+}
+
+function showLockedTooltip(difficulty) {
+  triggerAchievement(`${titleCase(difficulty)} is locked`);
+}
+
+function titleCase(str) {
+  return str.replace(
+    /\w\S*/g,
+    function(txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    }
+  );
+}
+
 function triggerAchievement(achievement) {
   const achievementTitle = achievement;
+
+  let icon;
+
+  if (achievementTitle.includes("locked")) {
+    icon = "lock";
+  }
+
+  else {
+    icon = "trophy";
+  }
+
   const achievementDescription = achievementsList[achievement];
 
   const gradient = gradients[achievement];
@@ -275,7 +309,7 @@ function triggerAchievement(achievement) {
   achievementSnackbar.style.backgroundImage = gradient;
 
   achievementSnackbar.innerHTML = `
-    <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
+    <h1 style="font-size: 5rem;" class="material-symbols-rounded">${icon}</h1>
 
     <div class="column" style="align-items: flex-start; gap: 0;">
       <h1 style="margin: 0.5rem;">${achievementTitle}</h1>
@@ -311,4 +345,21 @@ if (difficulty != "medium") {
 
 if (difficulty != "hard") {
   document.getElementById("hard").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+}
+
+if (localStorage.getItem("highscore") < 5) {
+  setDifficulty("easy");
+
+  lockDifficulty("medium");
+  lockDifficulty("hard");
+}
+
+else if (localStorage.getItem("highscore") < 10) {
+  setDifficulty("medium");
+
+  lockDifficulty("hard");
+}
+
+else if(localStorage.getItem("highscore") >= 10) {
+  setDifficulty("hard");
 }

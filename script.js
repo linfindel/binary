@@ -56,24 +56,24 @@ else if (localStorage.getItem("highscore") == "69420") {
 }
 
 function start() {
-  document.getElementById("bottom-card").style.animation = "1s slide-out ease both";
+  document.getElementById("bottom-card").style.animation = "1s slide-out ease-in both";
 
   setTimeout(() => {
-    document.getElementById("/").style.animation = "1s slide-out ease both";
+    document.getElementById("/").style.animation = "1s slide-out ease-in both";
     setTimeout(() => {
-      document.getElementById("*").style.animation = "1s slide-out ease both";
+      document.getElementById("*").style.animation = "1s slide-out ease-in both";
       setTimeout(() => {
-        document.getElementById("-").style.animation = "1s slide-out ease both";
+        document.getElementById("-").style.animation = "1s slide-out ease-in both";
         setTimeout(() => {
-          document.getElementById("+").style.animation = "1s slide-out ease both";
+          document.getElementById("+").style.animation = "1s slide-out ease-in both";
           setTimeout(() => {
-            document.getElementById("hard").style.animation = "1s slide-out ease both";
+            document.getElementById("hard").style.animation = "1s slide-out ease-in both";
             setTimeout(() => {
-              document.getElementById("medium").style.animation = "1s slide-out ease both";
+              document.getElementById("medium").style.animation = "1s slide-out ease-in both";
               setTimeout(() => {
-                  document.getElementById("easy").style.animation = "1s slide-out ease both";
+                  document.getElementById("easy").style.animation = "1s slide-out ease-in both";
                   setTimeout(() => {
-                    document.getElementById("top-card").style.animation = "1s slide-out ease both";
+                    document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
                     setTimeout(() => {
                       container.style.opacity = "0";
                     }, 1000);
@@ -184,24 +184,24 @@ function end() {
 }
 
 function reset() {
-  document.getElementById("bottom-card").style.animation = "1s slide-out ease both";
+  document.getElementById("bottom-card").style.animation = "1s slide-out ease-in both";
 
   setTimeout(() => {
-    document.getElementById("/").style.animation = "1s slide-out ease both";
+    document.getElementById("/").style.animation = "1s slide-out ease-in both";
     setTimeout(() => {
-      document.getElementById("*").style.animation = "1s slide-out ease both";
+      document.getElementById("*").style.animation = "1s slide-out ease-in both";
       setTimeout(() => {
-        document.getElementById("-").style.animation = "1s slide-out ease both";
+        document.getElementById("-").style.animation = "1s slide-out ease-in both";
         setTimeout(() => {
-          document.getElementById("+").style.animation = "1s slide-out ease both";
+          document.getElementById("+").style.animation = "1s slide-out ease-in both";
           setTimeout(() => {
-            document.getElementById("hard").style.animation = "1s slide-out ease both";
+            document.getElementById("hard").style.animation = "1s slide-out ease-in both";
             setTimeout(() => {
-              document.getElementById("medium").style.animation = "1s slide-out ease both";
+              document.getElementById("medium").style.animation = "1s slide-out ease-in both";
               setTimeout(() => {
-                  document.getElementById("easy").style.animation = "1s slide-out ease both";
+                  document.getElementById("easy").style.animation = "1s slide-out ease-in both";
                   setTimeout(() => {
-                    document.getElementById("top-card").style.animation = "1s slide-out ease both";
+                    document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
                     setTimeout(() => {
                       localStorage.clear();
                       location.reload();

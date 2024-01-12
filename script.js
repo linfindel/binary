@@ -203,8 +203,7 @@ function reset() {
                   setTimeout(() => {
                     document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
                     setTimeout(() => {
-                      localStorage.clear();
-                      location.reload();
+                      location.href = "reset.html";
                     }, 1000);
                   }, 100);
                 }, 100);

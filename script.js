@@ -6,6 +6,7 @@ const container = document.getElementById("container");
 let score = 0;
 let answer;
 let operator = "+";
+let difficulty = localStorage.getItem("difficulty") || "easy";
 let achievements = localStorage.getItem("achievements") || [];
 
 const achievementsList = {
@@ -53,7 +54,35 @@ else if (localStorage.getItem("highscore") == "69420") {
 }
 
 function start() {
-  container.style.opacity = "0";
+  document.getElementById("bottom-card").style.animation = "1s slide-out ease both";
+
+  setTimeout(() => {
+    document.getElementById("/").style.animation = "1s slide-out ease both";
+    setTimeout(() => {
+      document.getElementById("*").style.animation = "1s slide-out ease both";
+      setTimeout(() => {
+        document.getElementById("-").style.animation = "1s slide-out ease both";
+        setTimeout(() => {
+          document.getElementById("+").style.animation = "1s slide-out ease both";
+          setTimeout(() => {
+            document.getElementById("hard").style.animation = "1s slide-out ease both";
+            setTimeout(() => {
+              document.getElementById("medium").style.animation = "1s slide-out ease both";
+              setTimeout(() => {
+                  document.getElementById("easy").style.animation = "1s slide-out ease both";
+                  setTimeout(() => {
+                    document.getElementById("top-card").style.animation = "1s slide-out ease both";
+                    setTimeout(() => {
+                      container.style.opacity = "0";
+                    }, 1000);
+                  }, 100);
+                }, 100);
+              }, 100);
+            }, 100);
+          }, 100);
+      }, 100);
+    }, 100);
+  }, 100);
 
   setTimeout(() => {
     container.innerHTML = `
@@ -74,14 +103,28 @@ function start() {
     setTimeout(() => {
       end();
     }, 10000);
-  }, 250);
+  }, 2500);
 }
 
 function ask() {
   document.getElementById("input").value = "";
 
-  const num1 = Math.floor(Math.random() * 10);
-  const num2 = Math.floor(Math.random() * 10);
+  let max;
+
+  if (localStorage.getItem("difficulty") == "easy") {
+    max = 10;
+  }
+
+  else if (localStorage.getItem("difficulty") == "medium") {
+    max = 50;
+  }
+
+  if (localStorage.getItem("difficulty") == "hard") {
+    max = 100;
+  }
+
+  const num1 = Math.floor(Math.random() * max);
+  const num2 = Math.floor(Math.random() * max);
 
   if (operator == "+") {
     answer = num1 + num2;
@@ -139,8 +182,36 @@ function end() {
 }
 
 function reset() {
-  localStorage.clear();
-  location.reload();
+  document.getElementById("bottom-card").style.animation = "1s slide-out ease both";
+
+  setTimeout(() => {
+    document.getElementById("/").style.animation = "1s slide-out ease both";
+    setTimeout(() => {
+      document.getElementById("*").style.animation = "1s slide-out ease both";
+      setTimeout(() => {
+        document.getElementById("-").style.animation = "1s slide-out ease both";
+        setTimeout(() => {
+          document.getElementById("+").style.animation = "1s slide-out ease both";
+          setTimeout(() => {
+            document.getElementById("hard").style.animation = "1s slide-out ease both";
+            setTimeout(() => {
+              document.getElementById("medium").style.animation = "1s slide-out ease both";
+              setTimeout(() => {
+                  document.getElementById("easy").style.animation = "1s slide-out ease both";
+                  setTimeout(() => {
+                    document.getElementById("top-card").style.animation = "1s slide-out ease both";
+                    setTimeout(() => {
+                      localStorage.clear();
+                      location.reload();
+                    }, 1000);
+                  }, 100);
+                }, 100);
+              }, 100);
+            }, 100);
+          }, 100);
+      }, 100);
+    }, 100);
+  }, 100);
 }
 
 function setOperator(newOperator) {
@@ -162,6 +233,26 @@ function setOperator(newOperator) {
 
   if (operator != "/") {
     document.getElementById("/").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+  }
+}
+
+function setDifficulty(newDifficulty) {
+  difficulty = newDifficulty;
+
+  localStorage.setItem("difficulty", difficulty);
+
+  document.getElementById(difficulty).style.backgroundColor = "rgba(0, 89, 255, 0.5)";
+
+  if (difficulty != "easy") {
+    document.getElementById("easy").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+  }
+
+  if (difficulty != "medium") {
+    document.getElementById("medium").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+  }
+
+  if (difficulty != "hard") {
+    document.getElementById("hard").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
   }
 }
 
@@ -205,5 +296,19 @@ function cheat() {
   localStorage.setItem("arithmetic-god-triggered", true);
   localStorage.setItem("quantum-mechanics", true);
   localStorage.setItem("nice", true);
-  localStorage.setItem("doing-well", true);
+  localStorage.setItem("cheater", true);
+}
+
+document.getElementById(difficulty).style.backgroundColor = "rgba(0, 89, 255, 0.5)";
+
+if (difficulty != "easy") {
+  document.getElementById("easy").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+}
+
+if (difficulty != "medium") {
+  document.getElementById("medium").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+}
+
+if (difficulty != "hard") {
+  document.getElementById("hard").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
 }

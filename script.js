@@ -335,6 +335,38 @@ function triggerAchievement(achievement) {
   }, 5000);
 }
 
+function openAchievements() {
+  document.getElementById("bottom-card").style.animation = "1s slide-out ease-in both";
+
+  setTimeout(() => {
+    document.getElementById("/").style.animation = "1s slide-out ease-in both";
+    setTimeout(() => {
+      document.getElementById("*").style.animation = "1s slide-out ease-in both";
+      setTimeout(() => {
+        document.getElementById("-").style.animation = "1s slide-out ease-in both";
+        setTimeout(() => {
+          document.getElementById("+").style.animation = "1s slide-out ease-in both";
+          setTimeout(() => {
+            document.getElementById("hard").style.animation = "1s slide-out ease-in both";
+            setTimeout(() => {
+              document.getElementById("medium").style.animation = "1s slide-out ease-in both";
+              setTimeout(() => {
+                  document.getElementById("easy").style.animation = "1s slide-out ease-in both";
+                  setTimeout(() => {
+                    document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
+                    setTimeout(() => {
+                      location.href = "achievements.html";
+                    }, 1000);
+                  }, 100);
+                }, 100);
+              }, 100);
+            }, 100);
+          }, 100);
+      }, 100);
+    }, 100);
+  }, 100);
+}
+
 function cheat() {
   localStorage.setItem("answered-question", true);
   localStorage.setItem("doing-well", true);

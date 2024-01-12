@@ -22,19 +22,47 @@
         filter: hue-rotate(360deg);
       }
     }
+
+    @keyframes slide-in {
+      0% {
+        filter: blur(5px);
+        opacity: 0;
+        transform: translateY(5rem);
+      }
+
+      100% {
+        filter: blur(0px);
+        opacity: 1;
+        transform: translateY(0rem);
+      }
+    }
+
+    @keyframes slide-out {
+      0% {
+        filter: blur(0px);
+        opacity: 1;
+        transform: translateY(0rem);
+      }
+
+      100% {
+        filter: blur(5px);
+        opacity: 0;
+        transform: translateY(5rem);
+      }
+    }
   </style>
 </head>
 <body>
-  <button onclick="location.href = '.'" class="top" style="left: 0; margin-left: 1rem;">
+  <button id="back" onclick="back()" class="top" style="left: 0; margin-left: 1rem; animation: 2s ease slide-in 0.5s both;">
     <span class="material-symbols-rounded">arrow_back</span>
     Back
   </button>
 
-  <div class="card column" style="margin-top: 5rem;">
+  <div id="achievements-card" class="card column" style="animation: 2s ease slide-in 2s both;">
     <h1>Achievements</h1>
 
     <div class="column hole">
-        <div id="baby-steps" class="snackbar" style="">
+        <div id="baby-steps" class="snackbar" style="animation: 2s ease slide-in 2.5s both;">
           <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
 
           <div class="column" style="align-items: flex-start; gap: 0;">
@@ -43,7 +71,7 @@
           </div>
         </div>
 
-        <div id="doing-well" class="snackbar" style="">
+        <div id="doing-well" class="snackbar" style="animation: 2s ease slide-in 2.75s both;">
           <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
 
           <div class="column" style="align-items: flex-start; gap: 0;">
@@ -52,7 +80,7 @@
           </div>
         </div>
 
-        <div id="arithmetic-god" class="snackbar" style="">
+        <div id="arithmetic-god" class="snackbar" style="animation: 2s ease slide-in 3s both;">
           <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
 
           <div class="column" style="align-items: flex-start; gap: 0;">
@@ -61,7 +89,7 @@
           </div>
         </div>
 
-        <div id="quantum-mechanics" class="snackbar" style="">
+        <div id="quantum-mechanics" class="snackbar" style="animation: 2s ease slide-in 3.25s both;">
           <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
 
           <div class="column" style="align-items: flex-start; gap: 0;">
@@ -70,7 +98,7 @@
           </div>
         </div>
 
-        <div id="nice" class="snackbar" style="">
+        <div id="nice" class="snackbar" style="animation: 2s ease slide-in 3.5s both;">
           <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
 
           <div class="column" style="align-items: flex-start; gap: 0;">
@@ -79,7 +107,7 @@
           </div>
         </div>
 
-        <div id="cheater" class="snackbar" style="">
+        <div id="cheater" class="snackbar" style="animation: 2s ease slide-in 3.75s both;">
           <h1 style="font-size: 5rem;" class="material-symbols-rounded">trophy</h1>
 
           <div class="column" style="align-items: flex-start; gap: 0;">

@@ -406,4 +406,20 @@ else if(localStorage.getItem("highscore") >= 10) {
   setDifficulty("hard");
 }
 
-setOperator(localStorage.getItem("operator"));
+document.getElementById(operator).style.backgroundColor = "rgba(0, 89, 255, 0.5)";
+
+if (operator != "+") {
+  document.getElementById("+").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+}
+
+if (operator != "-") {
+  document.getElementById("-").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+}
+
+if (operator != "*") {
+  document.getElementById("*").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+}
+
+if (operator != "/") {
+  document.getElementById("/").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+}

@@ -256,6 +256,15 @@ function setDifficulty(newDifficulty) {
   if (difficulty != "hard") {
     document.getElementById("hard").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
   }
+
+  if (localStorage.getItem("highscore") < 5) {  
+    lockDifficulty("medium");
+    lockDifficulty("hard");
+  }
+  
+  else if (localStorage.getItem("highscore") < 10) {  
+    lockDifficulty("hard");
+  }
 }
 
 function lockDifficulty(difficulty) {

@@ -5,7 +5,7 @@ if (!localStorage.getItem("questions-answered")) {
 const container = document.getElementById("container");
 let score = 0;
 let answer;
-let operator = "+";
+let operator = localStorage.getItem("operator") || "+";
 let difficulty = localStorage.getItem("difficulty") || "easy";
 let achievements = localStorage.getItem("achievements") || [];
 
@@ -219,6 +219,8 @@ function reset() {
 function setOperator(newOperator) {
   operator = newOperator;
 
+  localStorage.setItem("operator", operator);
+
   document.getElementById(operator).style.backgroundColor = "rgba(0, 89, 255, 0.5)";
 
   if (operator != "+") {
@@ -372,3 +374,5 @@ else if (localStorage.getItem("highscore") < 10) {
 else if(localStorage.getItem("highscore") >= 10) {
   setDifficulty("hard");
 }
+
+setOperator(localStorage.getItem("operator"));

@@ -457,6 +457,9 @@ if (operator != "/") {
   document.getElementById("/").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
 }
 
-const repoUrl = 'https://api.github.com/repos/linfindel/maths-leaderboard';
-const filePath = 'leaderboard.json';
-const accessToken = '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';
+console.log(document.getElementById("container").offsetHeight);
+console.log(window.innerHeight);
+
+if (window.innerHeight < document.getElementById("container").offsetHeight) {
+  document.getElementById("container").classList.remove("absolute-centre");
+}

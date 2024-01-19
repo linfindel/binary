@@ -38,7 +38,7 @@ if (localStorage.getItem("highscore") == "10" && !localStorage.getItem("arithmet
   localStorage.setItem("arithmetic-god-triggered", true);
 }
 
-else if (localStorage.getItem("highscore") == "20") {
+else if (localStorage.getItem("highscore") == "20" && !localStorage.getItem("quantum-mechanics")) {
   triggerAchievement("You should be doing quantum mechanics by now");
 
   localStorage.setItem("quantum-mechanics", true);

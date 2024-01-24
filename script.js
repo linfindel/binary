@@ -149,7 +149,7 @@ function ask() {
   }
 
   else if (operator == "/") {
-    answer = num1 - num2;
+    answer = num1 / num2;
 
     document.getElementById("question").innerText = `${num1} ÷ ${num2}`;
   }

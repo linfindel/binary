@@ -77,6 +77,7 @@ function start() {
                     document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
                     setTimeout(() => {
                       container.style.opacity = "0";
+                      container.classList.add("absolute-centre");
                     }, 1000);
                   }, 100);
                 }, 100);
@@ -457,9 +458,12 @@ if (operator != "/") {
   document.getElementById("/").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
 }
 
-console.log(document.getElementById("container").offsetHeight);
-console.log(window.innerHeight);
-
-if (window.innerHeight < document.getElementById("container").offsetHeight) {
-  document.getElementById("container").classList.remove("absolute-centre");
-}
+setInterval(() => {
+  if (window.innerHeight < document.getElementById("container").offsetHeight) {
+    document.getElementById("container").classList.remove("absolute-centre");
+  }
+  
+  else {
+    document.getElementById("container").classList.add("absolute-centre");
+  }
+});

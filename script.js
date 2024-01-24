@@ -116,15 +116,15 @@ function ask() {
   let max;
 
   if (localStorage.getItem("difficulty") == "easy") {
-    max = 10;
+    max = 5;
   }
 
   else if (localStorage.getItem("difficulty") == "medium") {
-    max = 50;
+    max = 10;
   }
 
   if (localStorage.getItem("difficulty") == "hard") {
-    max = 100;
+    max = 25;
   }
 
   const num1 = Math.floor(Math.random() * max);
@@ -145,13 +145,13 @@ function ask() {
   else if (operator == "*") {
     answer = num1 * num2;
 
-    document.getElementById("question").innerText = `${num1} * ${num2}`;
+    document.getElementById("question").innerText = `${num1} × ${num2}`;
   }
 
   else if (operator == "/") {
     answer = num1 - num2;
 
-    document.getElementById("question").innerText = `${num1} / ${num2}`;
+    document.getElementById("question").innerText = `${num1} ÷ ${num2}`;
   }
 }
 

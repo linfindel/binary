@@ -128,7 +128,8 @@ function ask() {
   }
 
   const num1 = Math.floor(Math.random() * max);
-  const num2 = Math.floor(Math.random() * max);
+  var num2 = Math.floor(Math.random() * max);
+  num2 = 0;
 
   if (operator == "+") {
     answer = num1 + num2;
@@ -149,6 +150,10 @@ function ask() {
   }
 
   else if (operator == "/") {
+    while (num2 == 0) {
+      num2 = Math.floor(Math.random() * max);
+    }
+
     answer = num1 / num2;
 
     document.getElementById("question").innerText = `${num1} ÷ ${num2}`;

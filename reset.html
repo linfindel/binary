@@ -13,12 +13,14 @@
       0% {
         filter: blur(5px);
         opacity: 0;
+        pointer-events: none;
         transform: translateY(5rem);
       }
 
       100% {
         filter: blur(0px);
         opacity: 1;
+        pointer-events: all;
         transform: translateY(0rem);
       }
     }
@@ -27,12 +29,14 @@
       0% {
         filter: blur(0px);
         opacity: 1;
+        pointer-events: all;
         transform: translateY(0rem);
       }
 
       100% {
         filter: blur(5px);
         opacity: 0;
+        pointer-events: none;
         transform: translateY(5rem);
       }
     }

@@ -129,7 +129,6 @@ function ask() {
 
   const num1 = Math.floor(Math.random() * max);
   var num2 = Math.floor(Math.random() * max);
-  num2 = 0;
 
   if (operator == "+") {
     answer = num1 + num2;

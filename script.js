@@ -5,7 +5,6 @@ if (!localStorage.getItem("questions-answered")) {
 const container = document.getElementById("container");
 let score = 0;
 let answer;
-let operator = localStorage.getItem("operator") || "+";
 let difficulty = localStorage.getItem("difficulty") || "easy";
 let achievements = localStorage.getItem("achievements") || [];
 let leaderboard;
@@ -60,30 +59,18 @@ function start() {
   document.getElementById("bottom-card").style.animation = "1s slide-out ease-in both";
 
   setTimeout(() => {
-    document.getElementById("/").style.animation = "1s slide-out ease-in both";
+    document.getElementById("hard").style.animation = "1s slide-out ease-in both";
     setTimeout(() => {
-      document.getElementById("*").style.animation = "1s slide-out ease-in both";
+      document.getElementById("medium").style.animation = "1s slide-out ease-in both";
       setTimeout(() => {
-        document.getElementById("-").style.animation = "1s slide-out ease-in both";
+        document.getElementById("easy").style.animation = "1s slide-out ease-in both";
         setTimeout(() => {
-          document.getElementById("+").style.animation = "1s slide-out ease-in both";
+          document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
           setTimeout(() => {
-            document.getElementById("hard").style.animation = "1s slide-out ease-in both";
-            setTimeout(() => {
-              document.getElementById("medium").style.animation = "1s slide-out ease-in both";
-              setTimeout(() => {
-                  document.getElementById("easy").style.animation = "1s slide-out ease-in both";
-                  setTimeout(() => {
-                    document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
-                    setTimeout(() => {
-                      container.style.opacity = "0";
-                      container.classList.add("absolute-centre");
-                    }, 1000);
-                  }, 100);
-                }, 100);
-              }, 100);
-            }, 100);
-          }, 100);
+            container.style.opacity = "0";
+            container.classList.add("absolute-centre");
+          }, 1000);
+        }, 100);
       }, 100);
     }, 100);
   }, 100);
@@ -162,29 +149,17 @@ function reset() {
   document.getElementById("bottom-card").style.animation = "1s slide-out ease-in both";
 
   setTimeout(() => {
-    document.getElementById("/").style.animation = "1s slide-out ease-in both";
+    document.getElementById("hard").style.animation = "1s slide-out ease-in both";
     setTimeout(() => {
-      document.getElementById("*").style.animation = "1s slide-out ease-in both";
+      document.getElementById("medium").style.animation = "1s slide-out ease-in both";
       setTimeout(() => {
-        document.getElementById("-").style.animation = "1s slide-out ease-in both";
+        document.getElementById("easy").style.animation = "1s slide-out ease-in both";
         setTimeout(() => {
-          document.getElementById("+").style.animation = "1s slide-out ease-in both";
+          document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
           setTimeout(() => {
-            document.getElementById("hard").style.animation = "1s slide-out ease-in both";
-            setTimeout(() => {
-              document.getElementById("medium").style.animation = "1s slide-out ease-in both";
-              setTimeout(() => {
-                  document.getElementById("easy").style.animation = "1s slide-out ease-in both";
-                  setTimeout(() => {
-                    document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
-                    setTimeout(() => {
-                      location.href = "reset.html";
-                    }, 1000);
-                  }, 100);
-                }, 100);
-              }, 100);
-            }, 100);
-          }, 100);
+            location.href = "reset.html";
+          }, 1000);
+        }, 100);
       }, 100);
     }, 100);
   }, 100);
@@ -210,7 +185,9 @@ function setOperator(newOperator) {
   }
 
   if (operator != "/") {
-    document.getElementById("/").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
+    document.getElementById("/").style.backgroundColor = "rgba(0, 89
+
+, 255, 0.25)";
   }
 }
 
@@ -313,29 +290,17 @@ function openAchievements() {
   document.getElementById("bottom-card").style.animation = "1s slide-out ease-in both";
 
   setTimeout(() => {
-    document.getElementById("/").style.animation = "1s slide-out ease-in both";
+    document.getElementById("hard").style.animation = "1s slide-out ease-in both";
     setTimeout(() => {
-      document.getElementById("*").style.animation = "1s slide-out ease-in both";
+      document.getElementById("medium").style.animation = "1s slide-out ease-in both";
       setTimeout(() => {
-        document.getElementById("-").style.animation = "1s slide-out ease-in both";
+        document.getElementById("easy").style.animation = "1s slide-out ease-in both";
         setTimeout(() => {
-          document.getElementById("+").style.animation = "1s slide-out ease-in both";
+          document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
           setTimeout(() => {
-            document.getElementById("hard").style.animation = "1s slide-out ease-in both";
-            setTimeout(() => {
-              document.getElementById("medium").style.animation = "1s slide-out ease-in both";
-              setTimeout(() => {
-                  document.getElementById("easy").style.animation = "1s slide-out ease-in both";
-                  setTimeout(() => {
-                    document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
-                    setTimeout(() => {
-                      location.href = "achievements.html";
-                    }, 1000);
-                  }, 100);
-                }, 100);
-              }, 100);
-            }, 100);
-          }, 100);
+            location.href = "achievements.html";
+          }, 1000);
+        }, 100);
       }, 100);
     }, 100);
   }, 100);
@@ -345,29 +310,17 @@ function openAbout() {
   document.getElementById("bottom-card").style.animation = "1s slide-out ease-in both";
 
   setTimeout(() => {
-    document.getElementById("/").style.animation = "1s slide-out ease-in both";
+    document.getElementById("hard").style.animation = "1s slide-out ease-in both";
     setTimeout(() => {
-      document.getElementById("*").style.animation = "1s slide-out ease-in both";
+      document.getElementById("medium").style.animation = "1s slide-out ease-in both";
       setTimeout(() => {
-        document.getElementById("-").style.animation = "1s slide-out ease-in both";
+        document.getElementById("easy").style.animation = "1s slide-out ease-in both";
         setTimeout(() => {
-          document.getElementById("+").style.animation = "1s slide-out ease-in both";
+          document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
           setTimeout(() => {
-            document.getElementById("hard").style.animation = "1s slide-out ease-in both";
-            setTimeout(() => {
-              document.getElementById("medium").style.animation = "1s slide-out ease-in both";
-              setTimeout(() => {
-                  document.getElementById("easy").style.animation = "1s slide-out ease-in both";
-                  setTimeout(() => {
-                    document.getElementById("top-card").style.animation = "1s slide-out ease-in both";
-                    setTimeout(() => {
-                      location.href = "about.html";
-                    }, 1000);
-                  }, 100);
-                }, 100);
-              }, 100);
-            }, 100);
-          }, 100);
+            location.href = "about.html";
+          }, 1000);
+        }, 100);
       }, 100);
     }, 100);
   }, 100);
@@ -380,20 +333,6 @@ function cheat() {
   localStorage.setItem("quantum-mechanics", true);
   localStorage.setItem("nice", true);
   localStorage.setItem("cheater", true);
-}
-
-document.getElementById(difficulty).style.backgroundColor = "rgba(0, 89, 255, 0.5)";
-
-if (difficulty != "easy") {
-  document.getElementById("easy").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
-}
-
-if (difficulty != "medium") {
-  document.getElementById("medium").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
-}
-
-if (difficulty != "hard") {
-  document.getElementById("hard").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
 }
 
 if (localStorage.getItem("highscore") < 5) {
@@ -411,24 +350,6 @@ else if (localStorage.getItem("highscore") < 10) {
 
 else if(localStorage.getItem("highscore") >= 10) {
   setDifficulty("hard");
-}
-
-document.getElementById(operator).style.backgroundColor = "rgba(0, 89, 255, 0.5)";
-
-if (operator != "+") {
-  document.getElementById("+").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
-}
-
-if (operator != "-") {
-  document.getElementById("-").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
-}
-
-if (operator != "*") {
-  document.getElementById("*").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
-}
-
-if (operator != "/") {
-  document.getElementById("/").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
 }
 
 setInterval(() => {

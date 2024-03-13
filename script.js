@@ -113,70 +113,39 @@ function start() {
 function ask() {
   document.getElementById("input").value = "";
 
-  let max;
+  let bits;
 
-  if (localStorage.getItem("difficulty") == "easy") {
-    max = 5;
+  if (difficulty === "easy") {
+    bits = 4;
+  } else if (difficulty === "medium") {
+    bits = 6;
+  } else if (difficulty === "hard") {
+    bits = 8;
   }
 
-  else if (localStorage.getItem("difficulty") == "medium") {
-    max = 10;
-  }
+  const binaryNumber = generateRandomBinary(bits);
+  answer = binaryToDecimal(binaryNumber);
 
-  if (localStorage.getItem("difficulty") == "hard") {
-    max = 25;
-  }
-
-  const num1 = Math.floor(Math.random() * max);
-  var num2 = Math.floor(Math.random() * max);
-
-  if (operator == "+") {
-    answer = num1 + num2;
-
-    document.getElementById("question").innerText = `${num1} + ${num2}`;
-  }
-
-  else if (operator == "-") {
-    answer = num1 - num2;
-
-    document.getElementById("question").innerText = `${num1} - ${num2}`;
-  }
-
-  else if (operator == "*") {
-    answer = num1 * num2;
-
-    document.getElementById("question").innerText = `${num1} × ${num2}`;
-  }
-
-  else if (operator == "/") {
-    while (num2 == 0) {
-      num2 = Math.floor(Math.random() * max);
-    }
-
-    answer = num1 / num2;
-
-    document.getElementById("question").innerText = `${num1} ÷ ${num2}`;
-  }
+  document.getElementById("question").innerText = `Convert ${binaryNumber} from binary to denary.`;
 }
 
 function mark() {
-  const input = document.getElementById("input").value;
+  const input = document.getElementById("input").value.trim();
 
-  if (input == answer) {
+  if (input === answer.toString()) {
     localStorage.setItem("questions-answered", Number(localStorage.getItem("questions-answered")) + 1);
 
     if (!localStorage.getItem("answered-question")) {
-      triggerAchievement("Baby steps");
+      triggerAchievement("Binary Beginner");
       localStorage.setItem("answered-question", true);
     }
 
     ask();
-    
     score++;
 
     if (localStorage.getItem("questions-answered") == 10) {
-      triggerAchievement("Doing well");
-      localStorage.setItem("doing-well", true);
+      triggerAchievement("Binary Pro");
+      localStorage.setItem("binary-pro", true);
     }
   }
 }
@@ -471,3 +440,15 @@ setInterval(() => {
     document.getElementById("container").classList.add("absolute-centre");
   }
 });
+
+function generateRandomBinary(bits) {
+  let binary = "";
+  for (let i = 0; i < bits; i++) {
+    binary += Math.floor(Math.random() * 2);
+  }
+  return binary;
+}
+
+function binaryToDecimal(binary) {
+  return parseInt(binary, 2);
+}

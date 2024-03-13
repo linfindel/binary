@@ -1,5 +1,5 @@
 const username = 'linfindel';
-const repo = 'maths';
+const repo = 'binary';
 
 fetch(`https://api.github.com/repos/${username}/${repo}/commits?per_page=1`)
 .then(response => {

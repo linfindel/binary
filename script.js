@@ -165,32 +165,6 @@ function reset() {
   }, 100);
 }
 
-function setOperator(newOperator) {
-  operator = newOperator;
-
-  localStorage.setItem("operator", operator);
-
-  document.getElementById(operator).style.backgroundColor = "rgba(0, 89, 255, 0.5)";
-
-  if (operator != "+") {
-    document.getElementById("+").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
-  }
-
-  if (operator != "-") {
-    document.getElementById("-").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
-  }
-
-  if (operator != "*") {
-    document.getElementById("*").style.backgroundColor = "rgba(0, 89, 255, 0.25)";
-  }
-
-  if (operator != "/") {
-    document.getElementById("/").style.backgroundColor = "rgba(0, 89
-
-, 255, 0.25)";
-  }
-}
-
 function setDifficulty(newDifficulty) {
   difficulty = newDifficulty;
 

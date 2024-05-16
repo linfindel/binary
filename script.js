@@ -309,6 +309,7 @@ function cheat() {
   localStorage.setItem("cheater", true);
 }
 
+// Unlock easy if highscore is less than 5, keep others locked
 if (localStorage.getItem("highscore") < 5) {
   setDifficulty("easy");
 
@@ -316,12 +317,16 @@ if (localStorage.getItem("highscore") < 5) {
   lockDifficulty("hard");
 }
 
+
+// Unlock easy and medium if highscore is less than 10, keep hard locked
 else if (localStorage.getItem("highscore") < 10) {
   setDifficulty("medium");
 
   lockDifficulty("hard");
 }
 
+
+// Unlock hard if highscore is more than or equal to 10
 else if(localStorage.getItem("highscore") >= 10) {
   setDifficulty("hard");
 }
